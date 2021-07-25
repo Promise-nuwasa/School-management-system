@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" novalidate>
+    {% csrf token%}
+    {{ form }}
+    
+    <button type="submit" class="btn btn-primary" >Save</button>
+    <button type="button" class="btn btn-danger m1-4" >Cancel</button>
+
+    {% endblock content%}
+
+</form>
