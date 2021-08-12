@@ -1,9 +1,9 @@
 from django import forms
 from django.forms import fields
-from .models import Teacher
+from .models import Courses
 from django.db.models.base import Model
 
-class TeacherRegistrationForm(forms.ModelForm):
+class Courses(forms.ModelForm):
     class Meta:
-        model= Teacher
+        model= Courses
         fields= "__all__"

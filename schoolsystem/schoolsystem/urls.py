@@ -18,12 +18,22 @@ from django.urls import path
 from django.urls.conf import include
 
 
-# urlpatterns=[
+urlpatterns=[
+    path('admin/',admin.site.urls),
+    path('student/', include("student.urls")),
+]
+
+# urlpatterns = [
 #     path('admin/',admin.site.urls),
-#     path('student/', include("student.urls")),
+#     path('teacher/', include("teacher.urls")),
 # ]
 
-urlpatterns = [
-    path('admin/',admin.site.urls),
-    path('teacher/', include("teacher.urls")),
-]
+# urlpatterns = [
+#     path('admin/',admin.site.urls),
+#     path('courses/', include("courses.urls")),
+# ]
+
+# urlpatterns = [
+#     path('admin/',admin.site.urls),
+#     path('eventscalendar/', include("eventscalendar.urls")),
+# ]
