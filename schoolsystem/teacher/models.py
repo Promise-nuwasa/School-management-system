@@ -1,7 +1,5 @@
 from django.db import models
 
-
-
 # Create your models here.
 
 FE = "Female"
@@ -11,20 +9,23 @@ GENDER = (
     (ME, "Male")
     )
 class Teacher(models.Model):
-    profile=models.ImageField()
+    image=models.ImageField()
     first_name=models.CharField(max_length=15)
     last_name=models.CharField(max_length=25)
-    Email=models.EmailField(max_length=30)
-    Phone_number=models.CharField(max_length=14)
-    Age=models.PositiveIntegerField()
-    Gender=models.CharField(max_length=7, choices=GENDER, default= "Female")
-    Nationality=models.CharField(max_length=30)
+    email=models.EmailField(max_length=30)
+    phone_number=models.CharField(max_length=14)
+    age=models.PositiveIntegerField(null="True",blank="True")
+    gender=models.CharField(max_length=7, choices=GENDER, default= "Female")
+    nationality=models.CharField(max_length=30)
     county=models.CharField(max_length=20)
-    National_id=models.CharField(max_length=40)
-    Languages=models.CharField(max_length=29)
-    Bio=models.TextField()
-    Date_hired=models.DateField()
+    national_id=models.CharField(max_length=40)
+    languages=models.CharField(max_length=29)
+    bio=models.TextField(null="True",blank="True")
+    date_hired=models.DateField(null="True",blank="True")
     course=models.CharField(max_length=20)
     
+    def full_name(self):
+           return f"{self.first_name} {self.last_name}"
+
 
 

@@ -1,0 +1,67 @@
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAINER</title>
+</head>
+<body>
+    <table>
+        <tr>
+          <th>Profile</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email address</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Country </th>
+            <th>Phone Number </th>
+            <th>Date hired </th>
+            <th>Course </th>
+          </tr>
+
+            <tr>
+            {% for teacher in teachers %}
+            <td><img src="{{ teacher.image.url}}"></td>
+            <td>{{ teacher.first_name }}</td>
+            <td>{{ teacher.last_name }}</td>
+            <td>{{ teacher.email }}</td>
+            <td>{{ teacher.age}}</td>
+            <td>{{ teacher.gender }}</td>
+            <td>{{ teacher.county }}</td>
+            <td>{{ teacher.phone_number }}</td>
+            <td>{{ teacher.date_hired }}</td>
+            <td>{{ teacher.course }}</td>
+
+        </tr>
+   
+        {% endfor %}  
+          
+    </table>
+    <style>
+      img{
+        width: 50px;
+        height: 50px;
+      }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+         
+    </style>
+</body>
+</html>

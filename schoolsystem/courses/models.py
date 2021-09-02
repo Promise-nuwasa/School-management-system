@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Courses(models.Model):
-    Course_name=models.CharField(max_length=20)
-    Course_code=models.SmallIntegerField()
-    Syllabus=models.CharField(max_length=50)
-    Course_shedule=models.DateTimeField()
-    Course_duration=models.DurationField()
-    Course_Instractor=models.CharField(max_length=25)
+    course_name=models.CharField(max_length=20)
+    course_code=models.SmallIntegerField()
+    syllabus=models.CharField(max_length=50)
+    course_shedule=models.DateTimeField()
+    course_duration=models.DurationField()
+    course_instractor=models.CharField(max_length=25)

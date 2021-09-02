@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +13,14 @@
 <body>
     <div class="container">
         
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
+
             <h1>STUDENT REGISTRATION FORM </h1>
                 <img src="{% static 'student/images/akiralogo.jpg' %}" alt="">
-
-
+                
+             {%csrf_token%}
+             {{form.as_p}}
             
-            {{form.as_p}}
-           
             <button type="submit" class="btn btn-primary" >Save</button>
             <button type="button" class="btn btn-danger m1-4" >Cancel</button>
 

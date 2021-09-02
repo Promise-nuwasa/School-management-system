@@ -1,0 +1,55 @@
+
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURSES</title>
+</head>
+<body>
+  <table>
+    <tr>
+        <th>course_name</th>
+        <th>course_code</th>
+        <th>syllabus</th>
+        <th>course_shedule</th>
+        <th>course_duration</th>
+        <th>course_instractor</th>
+       
+    </tr>
+        <tr>
+        {% for course in courses %}
+
+        <td>{{ course.course_name }}</td>
+        <td>{{ course.course_code }}</td>
+        <td>{{ course.syllabus }}</td>
+        <td>{{ course.course_shedule }}</td>
+        <td>{{ course.course_duration}}</td>
+        <td>{{ course.course_instractor }}</td>
+        </tr>
+        
+    {% endfor %}    
+</table>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+         
+    </style>
+</body>
+</html>
