@@ -19,16 +19,18 @@
     <h2>Trainer:{{teachers}}</h2>
     <h3>Courses:{{courses}}</h3>
     <h4>Events:{{events}}</h4> -->
-    <a href="{ % url 'student:register_student' % }"> Students</a><br>
-    <img src="https://www.socialopencamp.org/2019/wp-content/uploads/2019/02/akirachix_foto.jpg" width="100%" height="100%"alt="">
+    <a href="{ % url 'student:register_student' % }"> Students</a>
+      <a href="{ % url 'teacher:register_teacher' % }"> Teacher</a>
+      <a href="{ % url 'courses:register_courses' % }"> Coursess</a>
+
+
+    <br>
+
+    <img src="https://www.socialopencamp.org/2019/wp-content/uploads/2019/02/akirachix_foto.jpg" width="100%" height="100%" sizes="cover" alt="">
     </div>
 
     <style>
-        body{
-            background-image: url(" static /images/codehive.png") 50% 0 no-repeat fixed;
-
-           
-        }
+        
         h1,h2,h3,h4{
             color: rgb(228, 21, 210);
     

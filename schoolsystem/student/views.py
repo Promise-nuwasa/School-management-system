@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from .forms import StudentRegistrationForm
 from django.shortcuts import render
 from django.shortcuts import render 
+
+
 from .models import Student
 
 # Create your views here.
@@ -36,13 +38,10 @@ def edit_student(request,id):
         form= StudentRegistrationForm(request.POST,instance=student)
         if form.is_valid():
             form.save()
-          
-
-            return redirect("student_profile", id=student.id)
-        else:
-
+            return HttpResponseRedirect("student_profile", id=student.id)
+    else:
             form= StudentRegistrationForm(instance=student)
-    return redirect(request,"edit_student.html", {"form" : form})
+            return render(request,"edit_student.html",{"form":form})
 
             
 

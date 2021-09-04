@@ -1,4 +1,4 @@
-{% csrf_token %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,77 +6,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
+    <title>Student Profile</title>
 </head>
 <body>
-    <table>
-        <tr>
-        <img src="{% static 'student/images/akiralogo.jpg' %}" alt="">
+    <div class="profile">
+      <div class="logo">
+    <img src="{% static 'student/images/akiralogo.jpg' %}" alt="">
+      </div>
+      <div class="student">
+    <img src="{{ student.image.url}}">
+      </div>
+    <h2>{{ student.full_name }}</h2>
+    <h2>{{ student.age }} years old</h2>
+    <h2>{{ student.gender }}</h2>
+    <h2>{{ student.country }}</h2>
+    <h2>{{ student.language }}</h2>
+    <h2>{{ student.gender }}</h2>
 
-            <th>Profile</th>
-            <th>Edit</th>
-            <th>Image</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Age</th>
-            <th>Gender </th>
-            <th>Country </th>
-            <th>Laptop Number</th>
-            <th>Phone Number </th>
-            <th>Date of birth </th>
-            <th>Language</th>
-            
-            </tr>
 
-            <tr>
-            {% for student in students %}
 
-            <td><a href="{% url 'student_profile' id=student.id %}"> Profile</a></td>
-            <td><a href="{% url 'edit_student' id=student.id %}"> Edit</a></td>
 
-            <td><img src="{{ student.image.url}}"></td>
-            <td>{{ student.first_name }}</td>
-            <td>{{ student.last_name }}</td>
-            <td>{{ student.age}}</td>
-            <td>{{ student.gender }}</td>
-            <td>{{ student.country }}</td>
-            <td>{{ student.laptop_number }}</td>
-            <td>{{ student.phone_number }}</td>
-            <td>{{ student.date_of_birth }}</td>
-            <td>{{ student.language }}</td>
 
-     
-            </tr>
-        {% endfor %} 
-        
-      
-             
-    </table>
-    <style>
-      img{
-        width: 50px;
-        height: 50px;
-      }
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            height: 50px;
-          }
-          
-          td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            
-          }
-          th{
-            background-color: rgb(226, 43, 171);
-          }
-          
-          tr:nth-child(even) {
-            background-color: #dddddd;
-          }
-    </style>
+    
+    </div>
+<style>
+    .profile{
+        border: 1px ;
+        border-radius: 10px;
+      box-shadow: blueviolet;
+      height: 530px;
+      width: 400px;
+     margin-left: 500px;
+     text-align: center;
+     background-color: rgb(243, 212, 243);
+    }
+    .student img{
+        padding-top: 10px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    h2{
+        font-size: 20px;
+    }
+    .logo img{
+      padding-top: 5px;
+      border-radius: 10px;
+       height: 70px;
+       width: 300px;
+    }
+
+</style>
+    
+
+
+
 </body>
 </html>
