@@ -27,7 +27,7 @@ urlpatterns=[
     path('teacher/', include("teacher.urls")),
     path('courses/', include("courses.urls")),
     path('api/', include ("api.urls")),
-    # path('', include('core.urls')),
+    path('', include('core.urls')),
 
 
 ]
