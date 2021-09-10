@@ -5,5 +5,5 @@ from .views import home
 app_name = 'core'
 
 urlpatterns = [
-    url('', home, name='home_view'), 
+    url('',home, name='home'), 
 ]

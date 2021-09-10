@@ -10,37 +10,29 @@
 </head>
 <body>
     <div class="profile">
-      <div class="logo">
-    <img src="{% static 'student/images/akiralogo.jpg' %}" alt="">
-      </div>
-      <div class="student">
+
+      
     <img src="{{ student.image.url}}">
-      </div>
+     
     <h2>{{ student.full_name }}</h2>
     <h2>{{ student.age }} years old</h2>
     <h2>{{ student.gender }}</h2>
-    <h2>{{ student.country }}</h2>
+    <h2>{{ student.nationality }}</h2>
     <h2>{{ student.language }}</h2>
-    <h2>{{ student.gender }}</h2>
-
-
-
-
-
-    
+    <h2>{{ student.phone_number }}</h2>
     </div>
 <style>
     .profile{
         border: 1px ;
         border-radius: 10px;
       box-shadow: blueviolet;
-      height: 530px;
-      width: 400px;
+      height: 430px;
+      width: 300px;
      margin-left: 500px;
      text-align: center;
      background-color: rgb(243, 212, 243);
     }
-    .student img{
+    img{
         padding-top: 10px;
         width: 150px;
         height: 150px;
@@ -49,13 +41,7 @@
     h2{
         font-size: 20px;
     }
-    .logo img{
-      padding-top: 5px;
-      border-radius: 10px;
-       height: 70px;
-       width: 300px;
-    }
-
+    
 </style>
     
 

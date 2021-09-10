@@ -38,14 +38,12 @@ def edit_student(request,id):
         form= StudentRegistrationForm(request.POST,instance=student)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("student_profile", id=student.id)
+            return redirect("student_profile", id=student.id)
     else:
             form= StudentRegistrationForm(instance=student)
             return render(request,"edit_student.html",{"form":form})
 
-            
-
-
-    
-    
-    
+# def delete_student(request,id):
+#     student=Student.objects.get(id=id)
+#     student.delete()
+#     return redirect("student_list")

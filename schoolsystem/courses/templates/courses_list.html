@@ -18,6 +18,7 @@
         <th>course_shedule</th>
         <th>course_duration</th>
         <th>course_instractor</th>
+        <th>Edit course</th>
        
     </tr>
         <tr>
@@ -29,6 +30,8 @@
         <td>{{ course.course_shedule }}</td>
         <td>{{ course.course_duration}}</td>
         <td>{{ course.course_instractor }}</td>
+        <td><a href="{% url 'edit_course' id=course.id %}"> Edit</a></td>
+
         </tr>
         
     {% endfor %}    
@@ -44,6 +47,9 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
+          }
+          th{
+            background-color: rgb(207, 20, 207);
           }
           
           tr:nth-child(even) {

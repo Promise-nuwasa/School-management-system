@@ -11,6 +11,7 @@
 <body>
     <table>
         <tr>
+         
           <th>Profile</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -21,10 +22,14 @@
             <th>Phone Number </th>
             <th>Date hired </th>
             <th>Course </th>
+            <th>View Profile</th>
+            <th>Edit Profile</th>
           </tr>
 
             <tr>
             {% for teacher in teachers %}
+
+           
             <td><img src="{{ teacher.image.url}}"></td>
             <td>{{ teacher.first_name }}</td>
             <td>{{ teacher.last_name }}</td>
@@ -35,6 +40,9 @@
             <td>{{ teacher.phone_number }}</td>
             <td>{{ teacher.date_hired }}</td>
             <td>{{ teacher.course }}</td>
+            <td><a href="{% url 'teacher_profile' id=teacher.id %}"> Profile</a></td>
+            <td><a href="{% url 'edit_teacher' id=teacher.id %}"> Edit</a></td>
+
 
         </tr>
    
@@ -56,6 +64,9 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
+          }
+        th{
+            background-color: rgba(241, 10, 241, 0.705);
           }
           
           tr:nth-child(even) {

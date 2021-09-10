@@ -8,5 +8,7 @@ urlpatterns = [
     path("profile/<int:id>/",student_profile, name = "student_profile"),
     path("edit/<int:id>/",edit_student, name = "edit_student"),
 
+
+
      
 ]

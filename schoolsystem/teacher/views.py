@@ -3,12 +3,14 @@ from django.shortcuts import render, redirect
 from .forms import TeacherRegistrationForm
 from django.shortcuts import render
 from django.shortcuts import render 
+
+
 from .models import Teacher
 
 # Create your views here.
 
 def register_teachers(request):
-    if request.method=="POST":
+    if request.method == "POST":
         form = TeacherRegistrationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
@@ -21,12 +23,29 @@ def register_teachers(request):
     return render(request,"register_teachers.html",{"form":form})
 
 def teacher_list(request):
-    teachers = Teacher.objects.all()
+    teachers=Teacher.objects.all()
     return render(request, "teacher_list.html",{"teachers":teachers})
+
 
 def teacher_profile(request,id): 
     teacher=Teacher.objects.get(id=id)
-    return render (request, "teacher_profile.html",{"teacher":teacher})  
+    return render (request, "teacher_profile.html",{"teacher":teacher})
+
+
+def edit_teacher(request,id):
+    teacher=Teacher.objects.get(id=id)
+    if request.method == "POST":
+        form= teacherRegistrationForm(request.POST,instance=teacher)
+        if form.is_valid():
+            form.save()
+            return redirect("teacher_profile", id=teacher.id)
+    else:
+            form= TeacherRegistrationForm(instance=teacher)
+            return render(request,"edit_teacher.html",{"form":form})
+
+            
+
+
     
     
     
